@@ -16,15 +16,14 @@ import rest.UserClient;
 public class LoginPageTest extends BaseTest {
     private WebDriver driver;
     private LoginPage loginPage;
-    private MainPage mainPage;
     private Header header;
     private RegisterPage registerPage;
     private ForgotPasswordPage forgotPasswordPage;
     private UserCabinetPage userCabinetPage;
     private User user;
     private UserClient api = new UserClient();
-
     private ValidatableResponse createdUserResponse;
+    private MainPage mainPage;
 
 
     @Before
