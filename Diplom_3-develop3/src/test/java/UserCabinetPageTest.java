@@ -27,12 +27,10 @@ public class UserCabinetPageTest extends BaseTest {
     @Before
     public void setUp(){
         driver = new ChromeDriver(options);
-
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
         header = new Header(driver);
         userCabinetPage = new UserCabinetPage(driver);
-
         user = UserGenerator.getRandom();
         createdUserResponse = api.createUser(user);
     }

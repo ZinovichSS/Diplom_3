@@ -1,5 +1,4 @@
 import base.BaseTest;
-import com.github.javafaker.Faker;
 import generators.UserGenerator;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -11,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pages.*;
 import rest.UserClient;
 
@@ -32,14 +30,12 @@ public class LoginPageTest extends BaseTest {
     @Before
     public void setUp(){
         driver = new ChromeDriver(options);
-
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
         forgotPasswordPage = new ForgotPasswordPage(driver);
         registerPage = new RegisterPage(driver);
         userCabinetPage = new UserCabinetPage(driver);
         header = new Header(driver);
-
         user = UserGenerator.getRandom();
         createdUserResponse = api.createUser(user);
     }
