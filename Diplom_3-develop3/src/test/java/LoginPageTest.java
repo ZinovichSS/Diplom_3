@@ -16,25 +16,27 @@ import rest.UserClient;
 public class LoginPageTest extends BaseTest {
     private WebDriver driver;
     private LoginPage loginPage;
+    private MainPage mainPage;
     private Header header;
     private RegisterPage registerPage;
     private ForgotPasswordPage forgotPasswordPage;
     private UserCabinetPage userCabinetPage;
     private User user;
     private UserClient api = new UserClient();
+
     private ValidatableResponse createdUserResponse;
-    private MainPage mainPage;
 
 
     @Before
     public void setUp(){
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(getOptions());
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
         forgotPasswordPage = new ForgotPasswordPage(driver);
         registerPage = new RegisterPage(driver);
         userCabinetPage = new UserCabinetPage(driver);
         header = new Header(driver);
+
         user = UserGenerator.getRandom();
         createdUserResponse = api.createUser(user);
     }

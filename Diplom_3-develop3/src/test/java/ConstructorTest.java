@@ -37,7 +37,7 @@ public class ConstructorTest extends BaseTest {
 
     @Before
     public void setUp(){
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(getOptions());
         mainPage = new MainPage(driver);
         constructor = new Constructor(driver);
     }

@@ -1,16 +1,13 @@
 import base.BaseTest;
 import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.ValidatableResponse;
 import models.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pages.*;
-import pages.base.BasePage;
 import rest.UserClient;
 
 public class RegisterPageTest extends BaseTest {
@@ -27,7 +24,7 @@ public class RegisterPageTest extends BaseTest {
 
     @Before
     public void setUp(){
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(getOptions());
         registerPage = new RegisterPage(driver);
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);

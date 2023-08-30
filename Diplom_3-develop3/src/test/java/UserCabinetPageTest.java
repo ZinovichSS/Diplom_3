@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pages.*;
 import rest.UserClient;
 
@@ -20,13 +19,12 @@ public class UserCabinetPageTest extends BaseTest {
     private UserCabinetPage userCabinetPage;
     private User user;
     private UserClient api = new UserClient();
-
     private ValidatableResponse createdUserResponse;
 
 
     @Before
     public void setUp(){
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(getOptions());
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
         header = new Header(driver);
