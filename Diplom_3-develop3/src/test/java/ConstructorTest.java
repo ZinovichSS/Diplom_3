@@ -16,7 +16,6 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class ConstructorTest extends BaseTest {
     private WebDriver driver;
-    private MainPage mainPage;
     private Constructor constructor;
     private String expected;
     private Ingredient ingredient;
@@ -38,7 +37,6 @@ public class ConstructorTest extends BaseTest {
     @Before
     public void setUp(){
         driver = new ChromeDriver(getOptions());
-        mainPage = new MainPage(driver);
         constructor = new Constructor(driver);
     }
 

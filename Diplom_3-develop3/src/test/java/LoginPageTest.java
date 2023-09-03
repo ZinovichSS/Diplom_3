@@ -20,7 +20,6 @@ public class LoginPageTest extends BaseTest {
     private Header header;
     private RegisterPage registerPage;
     private ForgotPasswordPage forgotPasswordPage;
-    private UserCabinetPage userCabinetPage;
     private User user;
     private UserClient api = new UserClient();
 
@@ -34,7 +33,6 @@ public class LoginPageTest extends BaseTest {
         mainPage = new MainPage(driver);
         forgotPasswordPage = new ForgotPasswordPage(driver);
         registerPage = new RegisterPage(driver);
-        userCabinetPage = new UserCabinetPage(driver);
         header = new Header(driver);
 
         user = UserGenerator.getRandom();
